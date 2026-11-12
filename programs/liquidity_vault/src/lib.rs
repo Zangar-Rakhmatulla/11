@@ -22,4 +22,12 @@ pub mod liquidity_vault {
     pub fn open_position(ctx: Context<OpenPosition>) -> Result<()> {
         crate::instructions::open_position::handle_open_position(ctx)
     }
+
+    pub fn deposit(ctx: Context<Deposit>, amount: u64) -> Result<()> {
+        crate::instructions::deposit::handle_deposit(ctx, amount)
+    }
+
+    pub fn withdraw(ctx: Context<Withdraw>, shares_to_burn: u64) -> Result<()> {
+        crate::instructions::withdraw::handle_withdraw(ctx, shares_to_burn)
+    }
 }

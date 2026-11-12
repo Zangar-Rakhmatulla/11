@@ -8,4 +8,6 @@ pub enum ErrorCode {
     ZeroAmount,
     #[msg("Math overflow")]
     MathOverflow,
+    #[msg("Deposit is too small: zero shares")]
+    ZeroShares,
 }
