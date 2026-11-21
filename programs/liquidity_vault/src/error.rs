@@ -10,4 +10,6 @@ pub enum ErrorCode {
     MathOverflow,
     #[msg("Deposit is too small: zero shares")]
     ZeroShares,
+    #[msg("Slippage tolerance exceeded: output amount below minimum")]
+    SlippageExceeded,
 }

@@ -30,4 +30,13 @@ pub mod liquidity_vault {
     pub fn withdraw(ctx: Context<Withdraw>, shares_to_burn: u64) -> Result<()> {
         crate::instructions::withdraw::handle_withdraw(ctx, shares_to_burn)
     }
+
+    pub fn swap<'info>(
+        ctx: Context<'info, Swap<'info>>,
+        amount_in: u64,
+        min_amount_out: u64,
+        swap_ix_data: Vec<u8>,
+    ) -> Result<()> {
+        crate::instructions::swap::handle_swap(ctx, amount_in, min_amount_out, swap_ix_data)
+    }
 }
